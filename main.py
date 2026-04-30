@@ -1402,4 +1402,7 @@ else:
     run_dashboard(_csv_loader, _engine, _calculator, _health_status)
 
 # Build FastAPI app at module level (for: uvicorn main:api_app)
-api_app = build_api_app(_csv_loader, _engine, _calculator)
+try:
+    api_app = build_api_app(_csv_loader, _engine, _calculator)
+except Exception:
+    api_app = None
