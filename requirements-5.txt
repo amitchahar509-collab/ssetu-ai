@@ -1,0 +1,55 @@
+# ══════════════════════════════════════════════════════════════════
+# S-SETU AI — requirements.txt
+# Citizen's Integrity Guard — All Dependencies
+# Install: pip install -r requirements.txt
+# ══════════════════════════════════════════════════════════════════
+
+# ── CORE DATA STACK ─────────────────────────────────────────────
+pandas>=2.0.0                  # CSV loading, DataFrame ops, batch scoring
+numpy>=1.24.0                  # Numerical operations (pandas dependency)
+python-dateutil>=2.8.2         # Robust date parsing (D7/D10 date fields)
+
+# ── WEB DASHBOARD ────────────────────────────────────────────────
+streamlit>=1.32.0              # Main dashboard UI (streamlit run main.py)
+plotly>=5.18.0                 # Interactive charts: histogram, bar, box
+altair>=5.0.0                  # Optional: secondary charting
+
+# ── REST API ─────────────────────────────────────────────────────
+fastapi>=0.110.0               # REST API framework
+uvicorn[standard]>=0.27.0      # ASGI server for FastAPI
+python-multipart>=0.0.9        # Form parsing (WhatsApp Twilio webhooks)
+httpx>=0.26.0                  # Async HTTP client (API calls)
+
+# ── HTTP / SCRAPING ──────────────────────────────────────────────
+requests>=2.31.0               # Sync HTTP (MCA21, GST Portal, GeM APIs)
+urllib3>=2.0.0                 # Requests dependency
+
+# ── DATABASE ─────────────────────────────────────────────────────
+# sqlite3 is stdlib — no pip install needed
+
+# ── WHATSAPP INTEGRATION ─────────────────────────────────────────
+twilio>=8.10.0                 # Twilio WhatsApp API (Module 5)
+# wati-python>=1.0.0           # WATI SDK (optional — use REST directly)
+
+# ── ENVIRONMENT & CONFIG ─────────────────────────────────────────
+python-dotenv>=1.0.0           # .env file loading (API keys, secrets)
+pydantic>=2.0.0                # Data validation (FastAPI models)
+pydantic-settings>=2.0.0       # Settings from env vars
+
+# ── LOGGING & MONITORING ─────────────────────────────────────────
+rich>=13.0.0                   # Beautiful terminal output
+structlog>=23.0.0              # Structured logging (optional)
+
+# ── UTILITIES ────────────────────────────────────────────────────
+python-slugify>=8.0.0          # URL-safe entity names
+orjson>=3.9.0                  # Fast JSON parsing
+cachetools>=5.3.0              # In-memory LRU cache
+
+# ── ASYNC ────────────────────────────────────────────────────────
+anyio>=4.0.0                   # Async I/O primitives
+starlette>=0.36.0              # FastAPI dependency
+
+# ── TESTING (optional, dev only) ─────────────────────────────────
+# pytest>=7.4.0
+# pytest-asyncio>=0.23.0
+# httpx>=0.26.0                # Already listed above
